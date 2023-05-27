@@ -9,7 +9,7 @@ export const App = () => (
         dataProvider={dataProvider}
 		authProvider={authProvider}
 	>
-        <Resource name="users" list={ListGuesser} />
+        <Resource name="users" list={UserList} />
     </Admin>
 );
 
