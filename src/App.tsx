@@ -1,16 +1,13 @@
+// admin.tsx
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import dataProvider from './firebase/firebaseDataProvider';
+import  PostList  from './Components/PostList';
 
-import { Admin, Resource, ListGuesser, EditGuesser, ShowGuesser } from 'react-admin';
-import { dataProvider } from './dataProvider';
-import { authProvider } from './authProvider';
-import { UserList } from './Components/UserList';
-
-export const App = () => (
-    <Admin
-        dataProvider={dataProvider}
-		authProvider={authProvider}
-	>
-        <Resource name="users" list={UserList} />
-    </Admin>
+const App: React.FC = () => (
+  <Admin dataProvider={dataProvider}>
+    <Resource name="posts" list={PostList} />
+  </Admin>
 );
 
-    
+export default App;
