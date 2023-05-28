@@ -1,6 +1,5 @@
 import React from 'react';
-import { Create, SimpleForm, TextInput } from 'react-admin';
-import { useDataProvider } from 'react-admin';
+import { Create, SimpleForm, TextInput, useDataProvider } from 'react-admin';
 
 const CreateRandomPost: React.FC = () => {
   const dataProvider = useDataProvider();
@@ -23,7 +22,7 @@ const CreateRandomPost: React.FC = () => {
   return (
     <Create resource="posts" redirect={false}>
       <SimpleForm onSubmit={handleCreate}>
-        <TextInput source="title" />
+        <TextInput source="name" />
         <TextInput source="content" />
         <TextInput source="vid1" />
       </SimpleForm>
