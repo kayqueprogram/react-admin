@@ -23,7 +23,7 @@ const CreateRandomPost: React.FC = () => {
   return (
     <Create resource="posts" redirect={false}>
       <SimpleForm onSubmit={handleCreate}>
-        <TextInput source="name" />
+        <TextInput source="title" />
         <TextInput source="content" />
         <TextInput source="vid1" />
       </SimpleForm>
