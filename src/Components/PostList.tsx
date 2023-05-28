@@ -1,21 +1,34 @@
 import React from 'react';
-import { List, Datagrid, TextField, DateField, EditButton, DeleteButton } from 'react-admin';
-import { useFirebase } from 'react-admin-firebase';
+import { Create, SimpleForm, TextInput } from 'react-admin';
+import { useDataProvider } from 'react-admin';
 
-const PostList: React.FC = () => {
-    const firebase = useFirebase();
+const CreateRandomPost: React.FC = () => {
+  const dataProvider = useDataProvider();
 
-    return (
-        <List resource="posts" dataProvider={firebase}>
-            <Datagrid>
-                <TextField source="name" />
-                <TextField source="author" />
-                <DateField source="publishedAt" />
-                <EditButton basePath="/posts" />
-                <DeleteButton basePath="/posts" />
-            </Datagrid>
-        </List>
-    );
+  const handleCreate = async (values: any) => {
+    const randomId = Math.random().toString(36).substring(7);
+    const post = {
+      id: randomId,
+      name: values.name,
+      content: values.content,
+      vid1: values.vid1
+    };
+
+    await dataProvider.create('posts', { data: post });
+
+    // Redirecionar para a lista de posts após a criação
+    window.location.href = '/#/posts';
+  };
+
+  return (
+    <Create resource="posts" redirect={false}>
+      <SimpleForm onSubmit={handleCreate}>
+        <TextInput source="name" />
+        <TextInput source="content" />
+        <TextInput source="vid1" />
+      </SimpleForm>
+    </Create>
+  );
 };
 
-export default PostList;
+export default CreateRandomPost;

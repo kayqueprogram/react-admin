@@ -1,6 +1,6 @@
 import { FirebaseDataProvider } from 'react-admin-firebase';
-import { firestoreClient, firebaseAppAuth } from './firebaseConfig';
+import { firestoreClient } from './firebaseConfig';
 
-const dataProvider = FirebaseDataProvider(firestoreClient, firebaseAppAuth);
+const dataProvider = FirebaseDataProvider(firestoreClient);
 
 export default dataProvider;
