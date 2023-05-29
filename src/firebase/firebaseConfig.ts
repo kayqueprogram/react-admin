@@ -16,6 +16,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export const dataProvider = FirebaseDataProvider(firebaseConfig);
+const dataProvider = FirebaseDataProvider(firebaseConfig);
+
+export default  dataProvider;
 
 
