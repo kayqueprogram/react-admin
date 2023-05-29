@@ -5,7 +5,7 @@ import { authProvider } from './authProvider';
 import  dataProvider  from './firebase/firebaseConfig';
 import CreateRandomPost from './Components/PostList';
 
-const App: React.FC = () => (
+const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider}>
     <Resource name="posts" list={ListGuesser} />
   </Admin>

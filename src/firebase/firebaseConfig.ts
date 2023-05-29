@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+import {initializeApp} from 'firebase/app'
 import "firebase/firestore";
 import { FirebaseDataProvider } from "react-admin-firebase";
 
@@ -12,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-8DNJHR1WQ6"
 };
 
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const dataProvider = FirebaseDataProvider(firebaseConfig);
 
