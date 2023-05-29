@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import { FirebaseDataProvider } from "react-admin-firebase";
+import { FirebaseAuthProvider, FirebaseDataProvider } from "react-admin-firebase";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB376x4XGMwBAJ-n5Ov4It4VRShv6-MCBE",
@@ -18,6 +18,6 @@ firebase.initializeApp(firebaseConfig);
 
 const dataProvider = FirebaseDataProvider(firebaseConfig);
 
-export default  dataProvider;
+export { dataProvider };
 
 

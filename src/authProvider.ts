@@ -17,7 +17,7 @@ export const authProvider: AuthProvider = {
         }
 
         return Promise.reject(
-            new HttpError('Unauthorized', 401, {
+            new HttpError('Não autorizado', 401, {
                 message: 'user ou senha inválidos',
             })
         );
