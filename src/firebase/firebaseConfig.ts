@@ -1,8 +1,7 @@
-// firebaseConfig.ts
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import { FirebaseDataProvider } from "react-admin-firebase";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB376x4XGMwBAJ-n5Ov4It4VRShv6-MCBE",
@@ -15,13 +14,8 @@ const firebaseConfig = {
     measurementId: "G-8DNJHR1WQ6"
 };
 
-initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-export const authProvider = {
-    // Implemente as funções de autenticação aqui, se necessário
-};
+const dataProvider = FirebaseDataProvider(firebaseConfig);
 
-
-export const firestoreClient = getFirestore();
-
-//export const firebaseAppAuth = firebase.auth();
+export { dataProvider };
