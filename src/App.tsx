@@ -2,12 +2,12 @@ import React from 'react';
 import { Admin, Resource, ListGuesser, EditGuesser, Create, SimpleForm, TextInput } from 'react-admin';
 import { authProvider } from './authProvider';
 import dataProvider from './firebase/firebaseConfig';
+import CustomListGuesser from './Components/CustomListGuesser';
 import CreateRandomPost from './Components/CreateRandomPost';
 
 const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider} >
-    <Resource name="posts" list={ListGuesser} edit={EditGuesser} create={PostCreate} />
-    <CreateRandomPost />
+    <Resource name="posts" list={CustomListGuesser} edit={EditGuesser} create={PostCreate} />
   </Admin>
 );
 
