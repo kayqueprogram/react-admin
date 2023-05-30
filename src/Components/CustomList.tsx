@@ -1,7 +1,7 @@
 import React from 'react';
-import { List, Datagrid, TextField } from 'react-admin';
+import { List, Datagrid, TextField, ListProps } from 'react-admin';
 
-const CustomList = (props) => (
+const CustomList: React.FC<ListProps> = (props) => (
     <List {...props}>
         <Datagrid>
             <TextField source="title" />
