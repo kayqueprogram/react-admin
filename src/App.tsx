@@ -3,11 +3,12 @@ import { Admin, Resource, ListGuesser, EditGuesser, Create, SimpleForm, TextInpu
 import { authProvider } from './authProvider';
 import dataProvider from './firebase/firebaseConfig';
 import CustomList from './Components/CustomList';
+import ResourceEdit from './Components/ResourceEdit';
 import PartialListGuesser from './Components/CreateRandomPost';
 
 const App = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider} >
-    <Resource name="posts" list={CustomList} edit={EditGuesser} create={PostCreate} />
+    <Resource name="posts" list={CustomList} edit={ResourceEdit} create={PostCreate} />
   </Admin>
 );
 
